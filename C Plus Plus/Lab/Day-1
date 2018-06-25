@@ -1,0 +1,133 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+class Student
+{
+private: 
+	int roll;
+	string name;
+	long int phone;
+	string email;
+	string address;
+	int age;
+public:
+	// Declarations
+	// Constructors
+	Student();
+	Student(int,string,long int,string,string,int);
+	// Getters
+	int roll_getter();
+	string name_getter();
+	long int phone_getter();
+	string email_getter();
+	string address_getter();
+	int age_getter();
+	//setter
+	void set_roll(int);
+	void set_name(string);
+	void set_phone(long int);
+	void set_email(string);
+	void set_address(string);
+	void set_age(int);
+	//display function
+	void display();
+	// Destructor
+	~Student();
+	//Input
+	void user_input();
+};
+// Defining Functions
+Student::Student(){
+	roll=0;
+	name="Unknown";
+	phone=0;
+	email="Unknown";
+	address="Unknown";
+	age=0;
+}
+Student::Student(int r, string n, long int p, string e, string a, int ag){
+	roll=r;
+	name=n;
+	phone=p;
+	email=e;
+	address=a;
+	age=ag;
+}
+int Student::roll_getter(){
+	return roll;
+}
+string Student::name_getter(){
+	return name;
+}
+long int Student::phone_getter(){
+	return phone;
+}
+string Student::email_getter(){
+	return email;
+}
+string Student::address_getter(){
+	return address;
+}
+int Student::age_getter(){
+	return age;
+}
+void Student::set_roll(int ro){
+	roll=ro;
+}
+void Student::set_name(string na){
+	name=na;
+}
+void Student::set_phone(long int ph){
+	phone=ph;
+}
+void Student::set_email(string mail){
+	email=mail;
+}
+void Student::set_address(string ad){
+	address=ad;
+}
+void Student::set_age(int age1){
+	age=age1;
+}
+void Student::display(){
+	cout<<"\nName:"<<name<<"\nRoll No.:"<<roll<<"\nPhone Number:"<<phone<<"\nEmail Address:"<<email<<"\nAddress:"<<address<<"\nAge:"<<age<<"\n";
+}
+Student::~Student(){
+	cout<<"\nValues Destructed\n";
+}
+void Student::user_input(){
+	cout<<"Enter Name:";
+	cin>>name;
+	cout<<"Enter Roll:";
+	cin>>roll;
+	cout<<"Enter Phone Number:";
+	cin>>phone;
+	cout<<"Enter E-mail Address:";
+	cin>>email;
+	cout<<"Enter Address:";
+	cin>>address;
+	cout<<"Enter Age:";
+	cin>>age;
+}
+
+int main(){
+	Student st1, st2(4,"Amit Parajuli",9846856023,"be2017se587@gces.edu.np","Pokhara",17);
+	Student st3;
+	st1.set_roll(6);
+	st1.set_name("Arjun Adhikari");
+	st1.set_phone(9817147125);
+	st1.set_email("mailarjunadhikari@gmail.com");
+	st1.set_address("Parsyang");
+	st1.set_age(19);
+	st3.user_input();
+	int roll1=st1.roll_getter();
+	string name1=st1.name_getter();
+	long int phone1=st1.phone_getter();
+	string email1=st1.email_getter();
+	string add1=st1.address_getter();
+	int age1=st1.age_getter();
+	st1.display();
+	st2.display();
+	st3.display();
+	return 0;
+}
